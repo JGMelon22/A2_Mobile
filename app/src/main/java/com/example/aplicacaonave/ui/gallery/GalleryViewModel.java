@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import service.TextosAdicionais;
+import service.TextosAdicionaisService;
 
 public class GalleryViewModel extends ViewModel {
 
@@ -12,7 +12,7 @@ public class GalleryViewModel extends ViewModel {
 
     public GalleryViewModel() {
         // Instancia a classe com stringbuilder contendo o texto sobre a empresa
-        TextosAdicionais sobre = new TextosAdicionais();
+        TextosAdicionaisService sobre = new TextosAdicionaisService();
         mText = new MutableLiveData<>();
         mText.setValue(sobre.montaTextoSobre().toString());
     }

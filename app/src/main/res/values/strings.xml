@@ -8,6 +8,7 @@
     <string name="menu_gallery">Sobre</string>
     <string name="menu_slideshow">Nossa Missão</string>
     <string name="menu_contato">Contatos</string>
+    <string name="menu_alugueis">Histórico de Aluguéis</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_cadastro_cliente">CadastroClienteActivity</string>
@@ -20,5 +21,16 @@
 
     <string name="nome_app">GrA2Motors</string>
     <string name="email_app">gra2motors@gmail.com</string>
+
+    <string name="veiculos_basicos">Veículos Simples</string> <!--Veiculos Simples-->
+    <string name="veiculo_gol">Gol</string>
+    <string name="veiculo_ford_ka">KA</string>
+
+    <string name="veiculos_intermediarios">Veículos Intermediários</string> <!--Veiculos Intermediários-->
+    <string name="veiculos_golf">Golf</string>
+    <string name="veiculos_fusion">Fusion</string>
+
+    <string name="veiculos_premium">Veículos Premium</string> <!--Veiculos Premium-->
+    <string name="veiculo_bmw_i8">i8</string>
 
 </resources>

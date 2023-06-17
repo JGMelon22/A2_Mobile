@@ -2,6 +2,7 @@ package com.example.aplicacaonave.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,5 +24,10 @@ public class CadastroCliente extends AppCompatActivity {
 
     public void buttonCancelarOnClick(View view) {
         finish();
+    }
+
+    public void btttonDemoOnClick(View view) {
+        Intent intent = new Intent(getApplicationContext(), EscolhaVeiculos.class);
+        startActivity(intent);
     }
 }

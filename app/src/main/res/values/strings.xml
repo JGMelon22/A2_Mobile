@@ -18,6 +18,7 @@
     <string name="next">Next</string>
     <string name="avancar">Avançar</string>
     <string name="cancelar_retornar">Cancelar e Retornar</string>
+    <string name="retornar">Retornar</string>
 
     <string name="nome_app">GrA2Motors</string>
     <string name="email_app">gra2motors@gmail.com</string>

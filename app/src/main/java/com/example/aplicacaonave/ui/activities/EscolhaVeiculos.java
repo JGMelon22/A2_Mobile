@@ -3,6 +3,7 @@ package com.example.aplicacaonave.ui.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.aplicacaonave.R;
 
@@ -15,5 +16,9 @@ public class EscolhaVeiculos extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolha_veiculos);
+    }
+
+    public void buttonVoltarCadastroOnClick(View view) {
+        finish();
     }
 }

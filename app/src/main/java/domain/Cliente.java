@@ -7,6 +7,14 @@ public class Cliente {
     private Character sexo; // F ou M
     private String numeroCnh; // 12 caracteres (sem mascara de formatação)
 
+    // Sem sexo
+    public Cliente(String nomeCompleto, String cpfCnpj, String cep, String numeroCnh) {
+        this.nomeCompleto = nomeCompleto;
+        this.cpfCnpj = cpfCnpj;
+        this.cep = cep;
+        this.numeroCnh = numeroCnh;
+    }
+
     // Construtor
     public Cliente(String nomeCompleto, String cpfCnpj, String cep, Character sexo, String numeroCnh) {
         this.nomeCompleto = nomeCompleto;

@@ -2,12 +2,14 @@ package domain;
 
 public class Servicos {
     private boolean incluirSeguro;
-    private short tempoAluguel;
+    private Integer tempoAluguel;
+    private String formaPagamento;
     Carro carro;
 
-    public Servicos(boolean incluirSeguro, short tempoAluguel) {
+    public Servicos(boolean incluirSeguro, Integer tempoAluguel, String formaPagamento) {
         this.incluirSeguro = incluirSeguro;
         this.tempoAluguel = tempoAluguel;
+        this.formaPagamento = formaPagamento;
     }
 
     public boolean isIncluirSeguro() {
@@ -18,16 +20,24 @@ public class Servicos {
         this.incluirSeguro = incluirSeguro;
     }
 
-    public short getTempoAluguel() {
+    public Integer getTempoAluguel() {
         return tempoAluguel;
     }
 
-    public void setTempoAluguel(short tempoAluguel) {
+    public void setTempoAluguel(Integer tempoAluguel) {
         this.tempoAluguel = tempoAluguel;
     }
 
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
+
     // Calculo preço aluguel
-    public float precoAluguel() {
-        return tempoAluguel * carro.getPrecoAluguel() + carro.getPrecoSeguro();
+    public static Float precoAluguel(Integer tempoAluguelCarro, Float precoAluguelCarro, Float precoSeguroCarro) {
+        return (tempoAluguelCarro * precoAluguelCarro) + precoSeguroCarro;
     }
 }

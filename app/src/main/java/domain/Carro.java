@@ -7,6 +7,10 @@ public class Carro {
     private boolean disponivel;
 
     // Construtor
+
+    public Carro() {
+    }
+
     public Carro(String nomeCarro, String marcaCarro, String corCarro, int quantidadePassageiros, float precoSeguro, float precoAluguel, boolean disponivel) {
         this.nomeCarro = nomeCarro;
         this.marcaCarro = marcaCarro;

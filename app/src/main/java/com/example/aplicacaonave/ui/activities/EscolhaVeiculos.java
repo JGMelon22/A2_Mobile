@@ -63,6 +63,12 @@ public class EscolhaVeiculos extends AppCompatActivity {
             return;
         }
 
+        // Recupera dados da tela de cadastro
+        Bundle dados = getIntent().getExtras();
+        String nomeCliente = dados.getString("ChaveNomeCliente");
+        String cnhCliente = dados.getString("ChaveCnhCliente");
+        String cpfCnpjCliente = dados.getString("ChaveCpfCnpjCliente");
+
         Intent intent = new Intent(getApplicationContext(), Pagamentos.class);
         intent.putExtra("ChaveCarroCor", carro.getCorCarro());
         intent.putExtra("ChaveCarroMarca", carro.getMarcaCarro());
@@ -71,14 +77,14 @@ public class EscolhaVeiculos extends AppCompatActivity {
         intent.putExtra("ChaveCarroSeguro", carro.getPrecoSeguro());
         intent.putExtra("ChaveCarroPassageiros", carro.getQuantidadePassageiros());
 
+        // Dados tela cadastro cliente
+        intent.putExtra("ChaveNomeCliente", nomeCliente);
+        intent.putExtra("ChaveCnhCliente", cnhCliente);
+        intent.putExtra("ChaveCpfCnpjCliente", cpfCnpjCliente);
         startActivity(intent);
     }
 
     public void buttonAvancarPagamentoOnClick(View view) {
-
         capturaInformacoesCarro(view);
-
-        Intent intent = new Intent(getApplicationContext(), Pagamentos.class);
-        startActivity(intent);
     }
 }

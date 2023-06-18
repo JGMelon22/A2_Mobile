@@ -102,7 +102,6 @@ public class CadastroCliente extends AppCompatActivity {
         intent.putExtra("ChaveCnhCliente", cliente.getNumeroCnh());
 
         startActivity(intent);
-        finish();
 
         return true;
     }
@@ -114,10 +113,6 @@ public class CadastroCliente extends AppCompatActivity {
     public void buttonComecarOnClick(View view) {
 
         capturaInformacoesCliente(view);
-        if (!capturaInformacoesCliente(view))
-            return;
-
-        Intent intent = new Intent(getApplicationContext(), EscolhaVeiculos.class);
-        startActivity(intent);
+        if (!capturaInformacoesCliente(view)) ;
     }
 }

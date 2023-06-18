@@ -41,11 +41,11 @@ public class Pagamentos extends AppCompatActivity {
         // Forma de pagamento selecionada (default é cartao)
         String formaPagamento;
 
-        if (radioButtonCartao.isSelected()) {
+        if (radioButtonCartao.isChecked()) {
             formaPagamento = "Cartão";
-        } else if (radioButtonUrubuDoPix.isSelected()) {
+        } else if (radioButtonUrubuDoPix.isChecked()) {
             formaPagamento = "Pix";
-        } else if (radioButtonBoleto.isSelected()) {
+        } else if (radioButtonBoleto.isChecked()) {
             formaPagamento = "Boleto Bancário";
         } else {
             formaPagamento = "Cartão";
@@ -62,11 +62,7 @@ public class Pagamentos extends AppCompatActivity {
 
         boolean incluirSeguro = true;
 
-        if (checkBoxSim.isChecked()) {
-            incluirSeguro = true;
-        } else {
-            incluirSeguro = false;
-        }
+        incluirSeguro = checkBoxSim.isChecked();
 
         // Caso sejam informacoes valida, atribui a variaveis auxiliares
         Integer tempoAluguel = Integer.parseInt(editTextTempoAluguel.getText().toString());
@@ -74,11 +70,31 @@ public class Pagamentos extends AppCompatActivity {
         // Passa os valores para a classe servicos
         Servicos servicos = new Servicos(incluirSeguro, tempoAluguel, formaPagamento);
 
+        // Recupera dados da tela de cadastro
+        Bundle dados = getIntent().getExtras();
+        String nomeCliente = dados.getString("ChaveNomeCliente");
+        String cpfCnpjCliente = dados.getString("ChaveCpfCnpjCliente");
+        String cnhCliente = dados.getString("ChaveCnhCliente");
+        String corCarro= dados.getString("ChaveCarroCor");
+        String nomeCarro = dados.getString("ChaveCarroNome");
+        Float precoCarro = dados.getFloat("ChaveCarroPreco");
+        Float precoSeguroCarro = dados.getFloat("ChaveCarroSeguro");
+
         // Dictionary para passar valores para activities diferentes
         Intent intent = new Intent(getApplicationContext(), Sumario.class);
         intent.putExtra("ChaveFormaPagamento", servicos.getFormaPagamento());
         intent.putExtra("ChaveIncluirSeguro", servicos.isIncluirSeguro());
         intent.putExtra("ChaveTempoAluguel", servicos.getTempoAluguel());
+
+        // Dados tela cadastro cliente
+        intent.putExtra("ChaveNomeCliente", nomeCliente);
+        intent.putExtra("ChaveCpfCnpjCliente", cpfCnpjCliente);
+        intent.putExtra("ChaveCnhCliente", cnhCliente);
+        intent.putExtra("ChaveCarroMarca", corCarro);
+        intent.putExtra("ChaveCarroNome", nomeCarro);
+        intent.putExtra("ChaveCarroPreco", precoCarro);
+        intent.putExtra("ChaveCarroSeguro", precoSeguroCarro);
+        startActivity(intent);
 
         return true;
     }
@@ -91,10 +107,7 @@ public class Pagamentos extends AppCompatActivity {
 
     public void buttonAvancarRevisarOnClick(View view) {
         capturaInformacoesPagamento(view);
-        if (!capturaInformacoesPagamento(view))
-            return;
-
-        Intent intent = new Intent(getApplicationContext(), Sumario.class);
-        startActivity(intent);
+        if (!capturaInformacoesPagamento(view)) {
+        }
     }
 }

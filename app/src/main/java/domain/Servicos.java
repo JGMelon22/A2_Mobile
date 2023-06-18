@@ -37,7 +37,7 @@ public class Servicos {
     }
 
     // Calculo preço aluguel
-    public float precoAluguel() {
-        return tempoAluguel * carro.getPrecoAluguel() + carro.getPrecoSeguro();
+    public static Float precoAluguel(Integer tempoAluguelCarro, Float precoAluguelCarro, Float precoSeguroCarro) {
+        return (tempoAluguelCarro * precoAluguelCarro) + precoSeguroCarro;
     }
 }

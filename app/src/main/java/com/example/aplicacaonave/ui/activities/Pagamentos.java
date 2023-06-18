@@ -8,23 +8,23 @@ import android.view.View;
 
 import com.example.aplicacaonave.R;
 
-public class EscolhaVeiculos extends AppCompatActivity {
+public class Pagamentos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        getSupportActionBar().setTitle("Catálogo");
+        getSupportActionBar().setTitle("Pagamento");
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_escolha_veiculos);
+        setContentView(R.layout.activity_pagamentos);
     }
 
-    public void buttonVoltarCadastroOnClick(View view) {
+    public void buttonRetornarCatalogoOnCick(View view) {
         finish();
     }
 
-    public void buttonAvancarPagamentoOnClick(View view) {
-        Intent intent = new Intent(getApplicationContext(), Pagamentos.class);
+    public void buttonAvancarRevisarOnClick(View view) {
+        Intent intent = new Intent(getApplicationContext(), Sumario.class);
         startActivity(intent);
     }
 }

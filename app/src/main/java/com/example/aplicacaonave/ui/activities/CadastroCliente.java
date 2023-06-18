@@ -26,7 +26,7 @@ public class CadastroCliente extends AppCompatActivity {
         finish();
     }
 
-    public void btttonDemoOnClick(View view) {
+    public void buttonComecarOnClick(View view) {
         Intent intent = new Intent(getApplicationContext(), EscolhaVeiculos.class);
         startActivity(intent);
     }

@@ -4,6 +4,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string name="boas_vindas"></string> <!--Boas-Vindas-->
+
     <string name="menu_home">Menu Inicial</string>
     <string name="menu_gallery">Sobre</string>
     <string name="menu_slideshow">Nossa Missão</string>
@@ -33,5 +35,14 @@
 
     <string name="veiculos_premium">Veículos Premium</string> <!--Veiculos Premium-->
     <string name="veiculo_bmw_i8">i8</string>
+
+    <string name="pagamento_cartao">Cartão Crédito/Débito</string> <!--Formas de Pagamento-->
+    <string name="pagamento_pix">Pix</string>
+    <string name="pagamento_boleto">Boleto</string>
+
+    <string name="seguro">Incluir Seguro? </string> <!--Seguro-->
+    <string name="tempo_aluguel">Tempo de Alugue em dias: </string> <!--Tempo Aluguel-->
+
+    <string name="encerrar">Encerrar Programa</string> <!--Tempo Aluguel-->
 
 </resources>

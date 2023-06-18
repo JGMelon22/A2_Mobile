@@ -1,13 +1,17 @@
 package domain;
 
 public class CarroGolf extends Carro {
-    private final String nomeCarro = "Golf";
-    private final String marcaCarro = "Volkswagen";
-    private final String corCarro = "Branco";
-    private final int quantidadePassageiros = 5;
-    private final float precoAluguel = 562.00F;
-    private final float precoSeguro = 275.00F;
-    private final boolean disponivel = true;
+    private static final String nomeCarro = "Golf";
+    private static final String marcaCarro = "Volkswagen";
+    private static final String corCarro = "Branco";
+    private static final int quantidadePassageiros = 5;
+    private static final float precoAluguel = 562.00F;
+    private static final float precoSeguro = 275.00F;
+    private static final boolean disponivel = true;
+
+    public CarroGolf() {
+        super(nomeCarro, marcaCarro, corCarro, quantidadePassageiros, precoAluguel, precoSeguro, disponivel);
+    }
 
     public CarroGolf(String nomeCarro, String marcaCarro, String corCarro, int quantidadePassageiros, float precoSeguro, float precoAluguel, boolean disponivel) {
         super(nomeCarro, marcaCarro, corCarro, quantidadePassageiros, precoSeguro, precoAluguel, disponivel);

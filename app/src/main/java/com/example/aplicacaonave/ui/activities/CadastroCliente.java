@@ -2,13 +2,10 @@ package com.example.aplicacaonave.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
-
-import android.text.TextUtils;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -45,7 +42,7 @@ public class CadastroCliente extends AppCompatActivity {
 
         // Radio Buttons para o Sexo
         radioButtonMasculino = findViewById(R.id.radioButtonM);
-        radioButtonFeminino = findViewById(R.id.radioButtonF);
+        radioButtonFeminino = findViewById(R.id.radioButtonFusion);
 
         // Julga os campos
         if (TextUtils.isEmpty(editTextNomeCliente.getText())) {
@@ -75,13 +72,6 @@ public class CadastroCliente extends AppCompatActivity {
             valido = false;
             return false;
         }
-
-        // Julgar se sexo foi escolhido
-        // if (!radioButtonFeminino.isChecked() || !radioButtonMasculino.isChecked()) {
-        //     Toast.makeText(getApplicationContext(), "Informe seu sexo para prosseguir!", Toast.LENGTH_SHORT).show();
-        //     valido = false;
-        //     return false;
-        // }
 
         Character sexoClienteSelecionado;
 

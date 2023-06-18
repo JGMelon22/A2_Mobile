@@ -169,7 +169,7 @@
         app:layout_constraintVertical_bias="0.08">
 
         <RadioButton
-            android:id="@+id/radioButtonKa"
+            android:id="@+id/radioButtonGol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/veiculo_gol"
@@ -177,7 +177,7 @@
             android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonDoblo"
+            android:id="@+id/radioButtonKa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -195,7 +195,7 @@
             android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonFusion"
+            android:id="@+id/radioButtonBmw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -204,7 +204,7 @@
             android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonF"
+            android:id="@+id/radioButtonFusion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

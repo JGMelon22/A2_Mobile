@@ -1,6 +1,6 @@
 package service;
 
-public class TextosAdicionais {
+public class TextosAdicionaisService {
     public StringBuilder montaTextoNossaMissao() {
 
         StringBuilder sb = new StringBuilder();

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import service.TextosAdicionais;
+import service.TextosAdicionaisService;
 
 public class SlideshowViewModel extends ViewModel {
 
@@ -13,7 +13,7 @@ public class SlideshowViewModel extends ViewModel {
     public SlideshowViewModel() {
 
         // Instancia a classe com stringbuilder contendo o texto da missão
-        TextosAdicionais nossaMissao = new TextosAdicionais();
+        TextosAdicionaisService nossaMissao = new TextosAdicionaisService();
         mText = new MutableLiveData<>();
         mText.setValue(nossaMissao.montaTextoNossaMissao().toString());
     }

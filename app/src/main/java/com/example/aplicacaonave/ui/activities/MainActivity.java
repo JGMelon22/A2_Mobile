@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(view -> {
 
-            // Chama a tela de cadastro de clientes
+            // Chama a tela de cadastro de clientes=
             Intent intent = new Intent(getApplicationContext(), CadastroCliente.class);
             startActivity(intent);
         });
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_contato)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_contato, R.id.nav_aluguel)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

@@ -45,4 +45,11 @@
 
     <string name="encerrar">Encerrar Programa</string> <!--Tempo Aluguel-->
 
+    <string name="preco_gol">R$ 90,00</string> <!--Preco Aluguel Carros-->
+    <string name="preco_ka">R$ 130,00</string>
+    <string name="preco_golf">R$ 562,00</string>
+    <string name="preco_fusion">R$ 7000,00</string>
+    <string name="preco_bmw">R$ 3500,00</string>
+
+
 </resources>

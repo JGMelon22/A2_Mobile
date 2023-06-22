@@ -5,7 +5,7 @@ public class Cliente {
     private String cpfCnpj; // 11 ou 14 caracteres
     private String cep; // 8 caracteres
     private Character sexo; // F ou M
-    private String numeroCnh; // 12 caracteres (sem mascara de formatação)
+    private String numeroCnh; // 11 caracteres (sem mascara de formatação)
 
     // Sem sexo
     public Cliente(String nomeCompleto, String cpfCnpj, String cep, String numeroCnh) {

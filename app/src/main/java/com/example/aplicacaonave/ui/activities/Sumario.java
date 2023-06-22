@@ -38,7 +38,7 @@ public class Sumario extends AppCompatActivity {
 
         String sb = "### Resumo das Operações### " +
                 "\tNome Condutor: " + nomeCliente +
-                "\n\tCPF/CNPJ Condutor: " + FormataValoresService.formataCpf(cpfCnpjCliente) +
+                "\n\tCPF/CNPJ Condutor: " + FormataValoresService.formataCpf(cpfCnpjCliente) + // TODO - Critica se tiver 14 dígitos, formata como cnpj
                 "\n\tCNH Condutor: " + cnhCliente +
                 "\n\tNome Veículo: " + nomeCarro +
                 "\n\tQuantidade Dias Alugados: " + quantidadeDiasAlugados +

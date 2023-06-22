@@ -54,6 +54,7 @@ public class Pagamentos extends AppCompatActivity {
         boolean valido = true;
 
         // Julga se foi informado uma quantidade de dias minimo para aluguel
+        // TODO - Limitar até 730
         if (TextUtils.isEmpty(editTextTempoAluguel.getText()) || Integer.parseInt(editTextTempoAluguel.getText().toString()) == 0) {
             editTextTempoAluguel.setError("Tempo Inválido!");
             valido = false;

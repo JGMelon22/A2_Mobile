@@ -68,7 +68,7 @@ public class CadastroCliente extends AppCompatActivity {
             return false;
         }
         if (TextUtils.isEmpty(editTextCep.getText()) || editTextCep.getText().length() != 8) {
-            editTextCep.setError("Informe seu CEP completo para prosseguir!");
+            editTextCep.setError("Informe seu CEP completo para prosseguir!"); // 21211740
             valido = false;
             return false;
         }

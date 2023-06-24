@@ -63,11 +63,7 @@ public class Pagamentos extends AppCompatActivity {
         // Lógica para saber se a checkbox de seguro está marcada
         boolean incluirSeguro = false;
 
-        if (checkBoxSim.isChecked()) {
-            incluirSeguro = true;
-        } else {
-            incluirSeguro = false;
-        }
+        incluirSeguro = checkBoxSim.isChecked();
 
         // Caso sejam informacoes valida, atribui a variaveis auxiliares
         Integer tempoAluguel = Integer.parseInt(editTextTempoAluguel.getText().toString());

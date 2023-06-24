@@ -32,19 +32,21 @@ public class Sumario extends AppCompatActivity {
         Float precoSeguro = dados.getFloat("ChaveCarroSeguro");
         Float precoCarroDiario = dados.getFloat("ChaveCarroPreco");
         Integer quantidadeDiasAlugados = dados.getInt("ChaveTempoAluguel");
+        boolean incluirSeguro = dados.getBoolean("ChaveIncluirSeguro");
+
 
         // Preco final
-        Float precoFinalVeiculo = Servicos.precoAluguel(quantidadeDiasAlugados, precoCarroDiario, precoSeguro);
+        Float precoFinalVeiculo = Servicos.precoAluguel(quantidadeDiasAlugados, precoCarroDiario, precoSeguro, incluirSeguro);
 
-        String sb = "### Resumo das Operações### " +
+        String sb = "### Resumo das Operações ### " +
                 "\tNome Condutor: " + nomeCliente +
-                "\n\tCPF/CNPJ Condutor: " + FormataValoresService.formataCpf(cpfCnpjCliente) + // TODO - Critica se tiver 14 dígitos, formata como cnpj
+                "\n\t" + criticaCpfCnpj(cpfCnpjCliente) +
                 "\n\tCNH Condutor: " + cnhCliente +
                 "\n\tNome Veículo: " + nomeCarro +
                 "\n\tQuantidade Dias Alugados: " + quantidadeDiasAlugados +
                 "\n\tForma Pagamento: " + formaPagamento +
                 "\n\tPreço Veículo: " + FormataValoresService.formataPreco(precoCarroDiario) +
-                "\n\tPreço Seguro Veículo: " + FormataValoresService.formataPreco(precoSeguro) +
+                ""                    + criticaSeguro(precoSeguro, incluirSeguro) +
                 "\n\n\tPreço Final do Serviço: " + FormataValoresService.formataPreco(precoFinalVeiculo);
 
         textViewSummary.setText(sb);
@@ -53,4 +55,17 @@ public class Sumario extends AppCompatActivity {
     public void buttonEncerrarOnClick(View view) {
         finishAffinity(); // Encerra o programa
     }
+
+    public String criticaCpfCnpj(String s){
+        if(s.length() == 11) {
+            return "CPF Condutor: " + FormataValoresService.formataCpf(s);
+        }
+        return "CNPJ Condutor: " + FormataValoresService.formataCnpj(s);
+
+    }
+    public String criticaSeguro(Float s, boolean b){
+        if(b) return "\n\tPreço Seguro Veículo: " + FormataValoresService.formataPreco(s);
+        return "";
+    }
+
 }

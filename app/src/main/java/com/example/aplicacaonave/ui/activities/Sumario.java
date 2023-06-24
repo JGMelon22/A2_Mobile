@@ -32,9 +32,12 @@ public class Sumario extends AppCompatActivity {
         Float precoSeguro = dados.getFloat("ChaveCarroSeguro");
         Float precoCarroDiario = dados.getFloat("ChaveCarroPreco");
         Integer quantidadeDiasAlugados = dados.getInt("ChaveTempoAluguel");
+        boolean incluirSeguro = dados.getBoolean("ChaveIncluirSeguro");
+        // intent.putExtra("ChaveIncluirSeguro", servicos.isIncluirSeguro());
 
         // Preco final
-        Float precoFinalVeiculo = Servicos.precoAluguel(quantidadeDiasAlugados, precoCarroDiario, precoSeguro);
+        // boolean incluirSeguro, Integer tempoAluguelCarro, Float precoAluguelCarro, Float precoSeguroCarro
+        Float precoFinalVeiculo = Servicos.precoAluguel(incluirSeguro, quantidadeDiasAlugados, precoCarroDiario, precoSeguro);
 
         String sb = "### Resumo das Operações ### " +
                 "\tNome Condutor: " + nomeCliente +

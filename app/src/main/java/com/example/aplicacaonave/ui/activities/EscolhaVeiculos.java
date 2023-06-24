@@ -1,6 +1,7 @@
 package com.example.aplicacaonave.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ public class EscolhaVeiculos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         getSupportActionBar().setTitle("Catálogo");
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolha_veiculos);
     }

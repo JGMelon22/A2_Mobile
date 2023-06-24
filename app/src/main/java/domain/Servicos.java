@@ -37,7 +37,12 @@ public class Servicos {
     }
 
     // Calculo preço aluguel
-    public static Float precoAluguel(Integer tempoAluguelCarro, Float precoAluguelCarro, Float precoSeguroCarro) {
-        return (tempoAluguelCarro * precoAluguelCarro) + precoSeguroCarro;
+    public static Float precoAluguel(Integer tempoAluguelCarro, Float precoAluguelCarro, Float precoSeguroCarro, boolean incluirSeguro) {
+        return (tempoAluguelCarro * precoAluguelCarro) + (precoSeguroCarro * boolToInt(incluirSeguro));
     }
+
+    public static int boolToInt(boolean b) {
+        return b ? 1 : 0;
+    }
+
 }

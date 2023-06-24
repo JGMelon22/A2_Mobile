@@ -36,9 +36,9 @@ public class Sumario extends AppCompatActivity {
         // Preco final
         Float precoFinalVeiculo = Servicos.precoAluguel(quantidadeDiasAlugados, precoCarroDiario, precoSeguro);
 
-        String sb = "### Resumo das Operações### " +
+        String sb = "### Resumo das Operações ### " +
                 "\tNome Condutor: " + nomeCliente +
-                "\n\tCPF/CNPJ Condutor: " + FormataValoresService.formataCpf(cpfCnpjCliente) + // TODO - Critica se tiver 14 dígitos, formata como cnpj
+                "\n\tCPF/CNPJ Condutor: " + (cpfCnpjCliente.length() == 11 ? FormataValoresService.formataCpf(cpfCnpjCliente) : FormataValoresService.formataCnpj(cpfCnpjCliente)) +  // TODO - Critica se tiver 14 dígitos, formata como cnpj
                 "\n\tCNH Condutor: " + cnhCliente +
                 "\n\tNome Veículo: " + nomeCarro +
                 "\n\tQuantidade Dias Alugados: " + quantidadeDiasAlugados +

@@ -19,4 +19,7 @@ public class FormataValoresService {
     }
 
     // TODO - Formata CEP: precisa constar 8 números na editTextNumber e criar um método com substring, similar da formatCpf
+    public static String formataCep(String cep) {
+        return cep.substring(0, 5) + "-" + cep.substring(5);
+    }
 }

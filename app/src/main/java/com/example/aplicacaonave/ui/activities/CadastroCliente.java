@@ -6,12 +6,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.aplicacaonave.R;
 
 import domain.Cliente;
+import service.FormataValoresService;
 
 
 public class CadastroCliente extends AppCompatActivity {
@@ -26,7 +28,6 @@ public class CadastroCliente extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_cliente);
-
     }
 
     public boolean capturaInformacoesCliente(View view) {
@@ -81,7 +82,6 @@ public class CadastroCliente extends AppCompatActivity {
             sexoClienteSelecionado = 'M';
         } else
             sexoClienteSelecionado = 'X'; // Sexo não informado
-
 
         // Caso sejam informacoes valida, atribui a variaveis auxiliares
         String nomeCliente = editTextNomeCliente.getText().toString();

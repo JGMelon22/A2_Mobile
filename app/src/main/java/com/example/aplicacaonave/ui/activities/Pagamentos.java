@@ -61,9 +61,14 @@ public class Pagamentos extends AppCompatActivity {
             return false;
         }
 
-        boolean incluirSeguro = true;
+        // Lógica para saber se a checkbox de seguro está marcada
+        boolean incluirSeguro = false;
 
-        incluirSeguro = checkBoxSim.isChecked();
+        if (checkBoxSim.isChecked()) {
+            incluirSeguro = true;
+        } else {
+            incluirSeguro = false;
+        }
 
         // Caso sejam informacoes valida, atribui a variaveis auxiliares
         Integer tempoAluguel = Integer.parseInt(editTextTempoAluguel.getText().toString());
@@ -76,7 +81,7 @@ public class Pagamentos extends AppCompatActivity {
         String nomeCliente = dados.getString("ChaveNomeCliente");
         String cpfCnpjCliente = dados.getString("ChaveCpfCnpjCliente");
         String cnhCliente = dados.getString("ChaveCnhCliente");
-        String corCarro= dados.getString("ChaveCarroCor");
+        String corCarro = dados.getString("ChaveCarroCor");
         String nomeCarro = dados.getString("ChaveCarroNome");
         Float precoCarro = dados.getFloat("ChaveCarroPreco");
         Float precoSeguroCarro = dados.getFloat("ChaveCarroSeguro");

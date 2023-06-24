@@ -6,6 +6,7 @@ public class Servicos {
     private String formaPagamento;
     Carro carro;
 
+
     public Servicos(boolean incluirSeguro, Integer tempoAluguel, String formaPagamento) {
         this.incluirSeguro = incluirSeguro;
         this.tempoAluguel = tempoAluguel;

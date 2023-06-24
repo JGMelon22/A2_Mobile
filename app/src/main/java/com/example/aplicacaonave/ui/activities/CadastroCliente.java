@@ -63,11 +63,15 @@ public class CadastroCliente extends AppCompatActivity {
             valido = false;
             return false;
         }
-        if (TextUtils.isEmpty(editTextTelefone.getText())) {
+
+
+        // Critica se numero telefone/celular está vazio ou é maior que um numero de celular ou telefone englobando o DD
+        if (TextUtils.isEmpty(editTextTelefone.getText()) || editTextTelefone.getText().length() != 10 || editTextTelefone.getText().length() != 11) {
             editTextTelefone.setError("Informe um um telefone/celular para prosseguir!");
             valido = false;
             return false;
         }
+
         if (TextUtils.isEmpty(editTextCep.getText()) || editTextCep.getText().length() != 8) {
             editTextCep.setError("Informe seu CEP completo para prosseguir!"); // 21211740
             valido = false;

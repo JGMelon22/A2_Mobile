@@ -1,5 +1,7 @@
 package domain;
 
+import com.example.aplicacaonave.R;
+
 public class CarroKa extends Carro {
     private static final String nomeCarro = "KA";
     private static final String marcaCarro = "Ford";
@@ -9,6 +11,7 @@ public class CarroKa extends Carro {
     private static final float precoSeguro = 176.00F;
     private static final boolean disponivel = true;
 
+    private static final int imagem = R.drawable.ford_ka;
     public CarroKa() {
         super(nomeCarro, marcaCarro, corCarro, quantidadePassageiros, precoAluguel, precoSeguro, disponivel);
     }

@@ -27,7 +27,6 @@ public class EscolhaVeiculos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         getSupportActionBar().setTitle("Catálogo");
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolha_veiculos);
     }

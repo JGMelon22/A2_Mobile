@@ -15,7 +15,6 @@ import domain.CarroFusion;
 import domain.CarroGol;
 import domain.CarroGolf;
 import domain.CarroKa;
-import domain.Cliente;
 
 public class EscolhaVeiculos extends AppCompatActivity {
 
@@ -43,7 +42,7 @@ public class EscolhaVeiculos extends AppCompatActivity {
         radioButtonGol = findViewById(R.id.radioButtonGol);
         radioButtonKa = findViewById(R.id.radioButtonKa);
         radioButtonGolf = findViewById(R.id.radioButtonGolf);
-        radioButtonFusion = findViewById(R.id.radioButtonFusion);
+        radioButtonFusion = findViewById(R.id.radioButtonF);
         radioButtonBmw = findViewById(R.id.radioButtonBmw);
 
         Carro carro;

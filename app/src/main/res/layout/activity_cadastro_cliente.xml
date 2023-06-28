@@ -195,7 +195,7 @@
             android:text="Masculino" />
 
         <RadioButton
-            android:id="@+id/radioButtonFusion"
+            android:id="@+id/radioButtonF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Feminino" />

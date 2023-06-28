@@ -6,14 +6,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.aplicacaonave.R;
 
 import domain.Cliente;
-import service.FormataValoresService;
 
 
 public class CadastroCliente extends AppCompatActivity {
@@ -43,7 +41,7 @@ public class CadastroCliente extends AppCompatActivity {
 
         // Radio Buttons para o Sexo
         radioButtonMasculino = findViewById(R.id.radioButtonM);
-        radioButtonFeminino = findViewById(R.id.radioButtonFusion);
+        radioButtonFeminino = findViewById(R.id.radioButtonF);
 
         // Julga os campos
         if (TextUtils.isEmpty(editTextNomeCliente.getText())) {

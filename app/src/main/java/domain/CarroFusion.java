@@ -1,5 +1,7 @@
 package domain;
 
+import com.example.aplicacaonave.R;
+
 public class CarroFusion extends Carro {
     private static final String nomeCarro = "Ford Fusion";
     private static final String marcaCarro = "Ford";
@@ -9,6 +11,7 @@ public class CarroFusion extends Carro {
     private static final float precoSeguro = 441.00F;
     private static final boolean disponivel = true;
 
+    private static final int imagem = R.drawable.fusion;
     public CarroFusion() {
         super(nomeCarro, marcaCarro, corCarro, quantidadePassageiros, precoAluguel, precoSeguro, disponivel);
     }
@@ -51,4 +54,10 @@ public class CarroFusion extends Carro {
     public boolean isDisponivel() {
         return disponivel;
     }
+
+    @Override
+    public int getImagem(){
+        return imagem;
+    }
+
 }

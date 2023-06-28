@@ -50,6 +50,9 @@
     <string name="preco_golf">R$ 562,00</string>
     <string name="preco_fusion">R$ 7000,00</string>
     <string name="preco_bmw">R$ 3500,00</string>
+    <string name="carro">Carro</string>
+    <string name="r_500_00">R$ 500.00</string>
+    <string name="_mock_date">27/06/2023</string>
 
 
 </resources>

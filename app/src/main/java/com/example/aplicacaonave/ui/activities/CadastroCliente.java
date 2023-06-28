@@ -23,7 +23,6 @@ public class CadastroCliente extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         getSupportActionBar().setTitle("Cadastro Cliente");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_cliente);
 
@@ -42,7 +41,7 @@ public class CadastroCliente extends AppCompatActivity {
 
         // Radio Buttons para o Sexo
         radioButtonMasculino = findViewById(R.id.radioButtonM);
-        radioButtonFeminino = findViewById(R.id.radioButtonFusion);
+        radioButtonFeminino = findViewById(R.id.radioButtonFusion); //TODO: Fusion?
 
         // Julga os campos
         if (TextUtils.isEmpty(editTextNomeCliente.getText())) {
@@ -62,8 +61,8 @@ public class CadastroCliente extends AppCompatActivity {
             valido = false;
             return false;
         }
-        if (TextUtils.isEmpty(editTextTelefone.getText())) {
-            editTextTelefone.setError("Informe um um telefone/celular para prosseguir!");
+        if (TextUtils.isEmpty(editTextTelefone.getText()) || editTextTelefone.getText().length() > 13) {
+            editTextTelefone.setError("Informe um telefone/celular para prosseguir!");
             valido = false;
             return false;
         }

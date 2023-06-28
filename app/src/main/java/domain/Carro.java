@@ -5,6 +5,7 @@ public class Carro {
     private int quantidadePassageiros;
     private float precoAluguel, precoSeguro;
     private boolean disponivel;
+    private int imagem;
 
     // Construtor
 
@@ -66,6 +67,10 @@ public class Carro {
         return precoAluguel;
     }
 
+    public String getStringPrecoAluguel() {
+        return String.valueOf(precoAluguel);
+    }
+
     public void setPrecoAluguel(float precoAluguel) {
         this.precoAluguel = precoAluguel;
     }
@@ -76,5 +81,13 @@ public class Carro {
 
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    public int getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(int imagem) {
+        this.imagem = imagem;
     }
 }

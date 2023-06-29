@@ -61,7 +61,7 @@ public class CadastroCliente extends AppCompatActivity {
             valido = false;
             return false;
         }
-        if (TextUtils.isEmpty(editTextTelefone.getText()) || editTextTelefone.getText().length() > 13) {
+        if (TextUtils.isEmpty(editTextTelefone.getText()) || editTextTelefone.getText().length() != 13) {
             editTextTelefone.setError("Informe um telefone/celular para prosseguir!");
             valido = false;
             return false;

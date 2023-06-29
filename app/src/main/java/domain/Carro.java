@@ -1,6 +1,8 @@
 package domain;
 
-public class Carro {
+import java.io.Serializable;
+
+public class Carro implements Serializable {
     private String nomeCarro, marcaCarro, corCarro;
     private int quantidadePassageiros;
     private float precoAluguel, precoSeguro;
@@ -12,14 +14,15 @@ public class Carro {
     public Carro() {
     }
 
-    public Carro(String nomeCarro, String marcaCarro, String corCarro, int quantidadePassageiros, float precoSeguro, float precoAluguel, boolean disponivel) {
+    public Carro(String nomeCarro, String marcaCarro, String corCarro, int quantidadePassageiros, float precoAluguel, float precoSeguro, boolean disponivel) {
         this.nomeCarro = nomeCarro;
         this.marcaCarro = marcaCarro;
         this.corCarro = corCarro;
         this.quantidadePassageiros = quantidadePassageiros;
-        this.precoSeguro = precoSeguro;
         this.precoAluguel = precoAluguel;
+        this.precoSeguro = precoSeguro;
         this.disponivel = disponivel;
+        //this.imagem = imagem;
     }
 
     // Getters e Setters

@@ -14,6 +14,16 @@ import service.FormataValoresService;
 public class Sumario extends AppCompatActivity {
 
     private TextView textViewSummary;
+    String nomeCliente;
+    String nomeCarro;
+    String cpfCnpjCliente;
+    String cnhCliente;
+    String formaPagamento;
+    Float precoSeguro;
+    Float precoCarroDiario;
+    Integer quantidadeDiasAlugados;
+    boolean incluirSeguro;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +33,18 @@ public class Sumario extends AppCompatActivity {
         textViewSummary = findViewById(R.id.textViewSumario);
 
         // Recupera os Dados das demais activities
+
         Bundle dados = getIntent().getExtras();
-        String nomeCliente = dados.getString("ChaveNomeCliente");
-        String nomeCarro = dados.getString("ChaveCarroNome");
-        String cpfCnpjCliente = dados.getString("ChaveCpfCnpjCliente");
-        String cnhCliente = dados.getString("ChaveCnhCliente");
-        String formaPagamento = dados.getString("ChaveFormaPagamento");
-        Float precoSeguro = dados.getFloat("ChaveCarroSeguro");
-        Float precoCarroDiario = dados.getFloat("ChaveCarroPreco");
-        Integer quantidadeDiasAlugados = dados.getInt("ChaveTempoAluguel");
-        boolean incluirSeguro = dados.getBoolean("ChaveIncluirSeguro");
+        nomeCliente = dados.getString("ChaveNomeCliente");
+        nomeCarro = dados.getString("ChaveCarroNome");
+        cpfCnpjCliente = dados.getString("ChaveCpfCnpjCliente");
+        cnhCliente = dados.getString("ChaveCnhCliente");
+        formaPagamento = dados.getString("ChaveFormaPagamento");
+        precoSeguro = dados.getFloat("ChaveCarroSeguro");
+        precoCarroDiario = dados.getFloat("ChaveCarroPreco");
+        quantidadeDiasAlugados = dados.getInt("ChaveTempoAluguel");
+        incluirSeguro = dados.getBoolean("ChaveIncluirSeguro");
+
 
 
         // Preco final

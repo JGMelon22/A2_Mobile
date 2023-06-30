@@ -1,8 +1,15 @@
 package domain;
 
+import static androidx.core.content.res.TypedArrayUtils.getString;
+import static androidx.core.content.res.TypedArrayUtils.getText;
+
+import android.content.Context;
+
+import com.example.aplicacaonave.R;
+
 import java.io.Serializable;
 
-public class Carro implements Serializable {
+public class Carro {
     private String nomeCarro, marcaCarro, corCarro;
     private int quantidadePassageiros;
     private float precoAluguel, precoSeguro;
@@ -23,6 +30,17 @@ public class Carro implements Serializable {
         this.precoSeguro = precoSeguro;
         this.disponivel = disponivel;
         //this.imagem = imagem;
+    }
+
+    public Carro(String nomeCarro, String marcaCarro, String corCarro, int quantidadePassageiros, float precoAluguel, float precoSeguro, boolean disponivel, int imagem) {
+        this.nomeCarro = nomeCarro;
+        this.marcaCarro = marcaCarro;
+        this.corCarro = corCarro;
+        this.quantidadePassageiros = quantidadePassageiros;
+        this.precoAluguel = precoAluguel;
+        this.precoSeguro = precoSeguro;
+        this.disponivel = disponivel;
+        this.imagem = imagem;
     }
 
     // Getters e Setters
@@ -70,8 +88,14 @@ public class Carro implements Serializable {
         return precoAluguel;
     }
 
-    public String getStringPrecoAluguel() {
-        return String.valueOf(precoAluguel);
+    public String getStringPrecoAluguel(Context context) {
+
+        if (disponivel) {
+            return "R$ " + precoAluguel;
+        }
+        else {
+            return context.getResources().getString(R.string.indisponivel);
+        }
     }
 
     public void setPrecoAluguel(float precoAluguel) {
@@ -93,4 +117,15 @@ public class Carro implements Serializable {
     public void setImagem(int imagem) {
         this.imagem = imagem;
     }
+
+    private boolean isSelected;
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
 }

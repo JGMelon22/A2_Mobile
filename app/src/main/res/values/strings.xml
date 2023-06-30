@@ -53,6 +53,8 @@
     <string name="carro">Carro</string>
     <string name="r_500_00">R$ 500.00</string>
     <string name="_mock_date">27/06/2023</string>
+    <string name="mock_marca">Marca</string>
+    <string name="indisponivel">Indisponível</string>
 
 
 </resources>

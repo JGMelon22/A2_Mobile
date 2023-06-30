@@ -10,7 +10,6 @@ public class CarroGol extends Carro {
     private static final float precoAluguel = 90.00F;
     private static final float precoSeguro = 166.00F;
     private static final boolean disponivel = true;
-
     private static final int imagem = R.drawable.gol;
 
     public CarroGol() {

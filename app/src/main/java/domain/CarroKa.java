@@ -54,4 +54,10 @@ public class CarroKa extends Carro {
     public boolean isDisponivel() {
         return disponivel;
     }
+
+    @Override
+    public int getImagem(){
+        return imagem;
+    }
+
 }

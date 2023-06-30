@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.os.PersistableBundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,12 +74,6 @@ public class HistoricoFragment extends Fragment implements RecyclerViewClickInte
     @Override
     public void onItemClick(int position) {
 
-//        Intent intent = new Intent(getContext(), ActivitySumarioBinding.class);
-//        Bundle bundle = new Bundle();
-//        bundle.putSerializable("value", carros);
-//        intent.putExtras(bundle);
-
-
         // Dictionary para passar valores para activities diferentes
         Intent intent = new Intent(this.getContext(), Sumario.class);
         intent.putExtra("ChaveFormaPagamento", servicos.get(position).getFormaPagamento());
@@ -95,12 +90,6 @@ public class HistoricoFragment extends Fragment implements RecyclerViewClickInte
         intent.putExtra("ChaveCarroSeguro", carros.get(position).getPrecoSeguro());
 
         startActivity(intent);
-        // get bundle
-        //Intent intent = this.getIntent();
-        //Bundle bundle = intent.getExtras();
-        //
-        //List<Thumbnail> thumbs=
-        //               (List<Thumbnail>)bundle.getSerializable("value");
 
     }
 }

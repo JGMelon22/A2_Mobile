@@ -42,7 +42,7 @@ public class CAR_Adapter extends RecyclerView.Adapter<CAR_Adapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         // Bind data to the ViewHolder
         holder.tvCarro.setText(carros.get(position).getNomeCarro());
-        holder.tvPreco.setText("R$ " + carros.get(position).getStringPrecoAluguel());
+        holder.tvPreco.setText(carros.get(position).getStringPrecoAluguel(context));
         holder.tvData.setText(carros.get(position).getMarcaCarro());
         holder.imgView.setImageResource(carros.get(position).getImagem());
     }

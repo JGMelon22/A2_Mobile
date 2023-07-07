@@ -3,11 +3,16 @@ package com.example.aplicacaonave.ui.activities;
 import static java.security.AccessController.getContext;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -30,16 +35,12 @@ import domain.Servicos;
 
 public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallback {
 
-    private RecyclerView recyclerViewSimples, recyclerViewIntermed, recyclerViewPremium;
-    private ArrayList<Carro> carros = new ArrayList<>();
-    private ArrayList<Servicos> servicos = new ArrayList<>();
-    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private RecyclerView recyclerViewSimples, recyclerViewIntermed, recyclerViewPremium; //
     private ArrayList<Carro> carrosSimples = new ArrayList<>();
     private ArrayList<Carro> carrosIntermed = new ArrayList<>();
     private ArrayList<Carro> carrosPremium = new ArrayList<>();
     private SI_Adapter adapter1, adapter2, adapter3;
-
-    private RecyclerView[] recyclerViews = new RecyclerView[3];
+    private RecyclerView[] recyclerViews = new RecyclerView[3]; //
     private int adapterIndex, selectedPosition;
     private int selectedItem1 = RecyclerView.NO_POSITION;
     private int selectedItem2 = RecyclerView.NO_POSITION;
@@ -47,15 +48,16 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
 
     private SI_Adapter selectedAdapter;
 
-    private RadioButton radioButtonGol, radioButtonKa, radioButtonGolf, radioButtonBmw, radioButtonFusion;
+    private boolean darkMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         getSupportActionBar().setTitle("Catálogo");
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_escolha_veiculos);
         setContentView(R.layout.activity_escolha_veiculos_new);
+
+        darkMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES ? true : false;
 
         //Simples
 
@@ -109,7 +111,6 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
         recyclerViews[1] = recyclerViewIntermed;
         recyclerViews[2] = recyclerViewPremium;
         adapterIndex = 0;
-
 
     }
 
@@ -227,33 +228,8 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
             }
 
         } else { Toast.makeText(getApplicationContext(), "Carro indisponível", Toast.LENGTH_SHORT).show(); }
-//        selectedPosition = position;
-//        adapterIndex = index;
-//
-//        if (adapter1.getIsIndisponivel()) return;
-//
-//        switch (adapterIndex) {
-//            case 0:
-//                selectedAdapter = adapter1;
-//                adapter1.setSelectedItemPosition(position);
-//                adapter2.setSelectedItemPosition(RecyclerView.NO_POSITION);
-//                adapter3.setSelectedItemPosition(RecyclerView.NO_POSITION);
-//                break;
-//            case 1:
-//                selectedAdapter = adapter2;
-//                adapter1.setSelectedItemPosition(RecyclerView.NO_POSITION);
-//                adapter2.setSelectedItemPosition(position);
-//                adapter3.setSelectedItemPosition(RecyclerView.NO_POSITION);
-//                break;
-//            case 2:
-//                selectedAdapter = adapter3;
-//                adapter1.setSelectedItemPosition(RecyclerView.NO_POSITION);
-//                adapter2.setSelectedItemPosition(RecyclerView.NO_POSITION);
-//                adapter3.setSelectedItemPosition(position);
-//                break;
-//        }
-    }
 
+    }
 
     @Override
     public void onItemSelected(int adapterPosition) {
@@ -276,4 +252,42 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
             // Item at position 1 is deselected in the adapter
         }
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem darkModeItem = menu.findItem(R.id.action_darkmode);
+        darkModeItem.setChecked(darkMode);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.action_darkmode) {
+            darkMode = !darkMode;
+            item.setChecked(darkMode);
+
+            if(item.isChecked()) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+
+            return true;
+        } else if (itemId == R.id.action_settings) {
+            Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

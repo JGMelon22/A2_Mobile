@@ -23,9 +23,9 @@ public class SI_Adapter extends RecyclerView.Adapter<SI_Adapter.MyViewHolder> {
 
     Context context;
     ArrayList<Carro> carros;
-    private SparseBooleanArray selectedItems;
-    private AdapterCallback adapterCallback;
-    private int adapterIndex;
+    private final SparseBooleanArray selectedItems;
+    private final AdapterCallback adapterCallback;
+    private final int adapterIndex;
 
     private int selectedItemPosition = RecyclerView.NO_POSITION;
 

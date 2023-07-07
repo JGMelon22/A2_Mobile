@@ -54,19 +54,12 @@ public class Pagamentos extends AppCompatActivity {
         boolean valido = true;
 
         // Julga se foi informado uma quantidade de dias minimo para aluguel
-        // TODO - Limitar até 730
         if (TextUtils.isEmpty(editTextTempoAluguel.getText()) || Integer.parseInt(editTextTempoAluguel.getText().toString()) == 0) {
             editTextTempoAluguel.setError("Tempo Inválido!");
             valido = false;
-            return false;
         }
 
-        boolean incluirSeguro = false;
-
-        if(checkBoxSim.isChecked())
-        {
-            incluirSeguro = true;
-        }
+        boolean incluirSeguro = checkBoxSim.isChecked();
 
         // Caso sejam informacoes valida, atribui a variaveis auxiliares
         Integer tempoAluguel = Integer.parseInt(editTextTempoAluguel.getText().toString());
@@ -79,7 +72,7 @@ public class Pagamentos extends AppCompatActivity {
         String nomeCliente = dados.getString("ChaveNomeCliente");
         String cpfCnpjCliente = dados.getString("ChaveCpfCnpjCliente");
         String cnhCliente = dados.getString("ChaveCnhCliente");
-        String corCarro= dados.getString("ChaveCarroCor");
+        String corCarro = dados.getString("ChaveCarroCor");
         String nomeCarro = dados.getString("ChaveCarroNome");
         Float precoCarro = dados.getFloat("ChaveCarroPreco");
         Float precoSeguroCarro = dados.getFloat("ChaveCarroSeguro");

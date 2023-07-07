@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.example.aplicacaonave.R;
 import com.example.aplicacaonave.databinding.ActivityMainBinding;
@@ -41,7 +40,7 @@ public class CadastroCliente extends AppCompatActivity {
 
         // Radio Buttons para o Sexo
         radioButtonMasculino = findViewById(R.id.radioButtonM);
-        radioButtonFeminino = findViewById(R.id.radioButtonFusion); //TODO: Fusion?
+        radioButtonFeminino = findViewById(R.id.radioButtonF); //TODO: Fusion?
 
         // Julga os campos
         if (TextUtils.isEmpty(editTextNomeCliente.getText())) {

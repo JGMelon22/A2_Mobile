@@ -34,9 +34,9 @@ public class HistoricoFragment extends Fragment implements RecyclerViewClickInte
     private RecyclerView recyclerView;
     private CAR_Adapter adapter;
     private FragmentHistoricoBinding binding;
-    private ArrayList<Carro> carros = new ArrayList<>();
-    private ArrayList<Servicos> servicos = new ArrayList<>();
-    private  ArrayList<Cliente> clientes = new ArrayList<>();
+    private final ArrayList<Carro> carros = new ArrayList<>();
+    private final ArrayList<Servicos> servicos = new ArrayList<>();
+    private final ArrayList<Cliente> clientes = new ArrayList<>();
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,

@@ -36,15 +36,15 @@ import domain.Servicos;
 public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallback {
 
     private RecyclerView recyclerViewSimples, recyclerViewIntermed, recyclerViewPremium; //
-    private ArrayList<Carro> carrosSimples = new ArrayList<>();
-    private ArrayList<Carro> carrosIntermed = new ArrayList<>();
-    private ArrayList<Carro> carrosPremium = new ArrayList<>();
+    private final ArrayList<Carro> carrosSimples = new ArrayList<>();
+    private final ArrayList<Carro> carrosIntermed = new ArrayList<>();
+    private final ArrayList<Carro> carrosPremium = new ArrayList<>();
     private SI_Adapter adapter1, adapter2, adapter3;
-    private RecyclerView[] recyclerViews = new RecyclerView[3]; //
+    private final RecyclerView[] recyclerViews = new RecyclerView[3]; //
     private int adapterIndex, selectedPosition;
-    private int selectedItem1 = RecyclerView.NO_POSITION;
-    private int selectedItem2 = RecyclerView.NO_POSITION;
-    private int selectedItem3 = RecyclerView.NO_POSITION;
+    private final int selectedItem1 = RecyclerView.NO_POSITION;
+    private final int selectedItem2 = RecyclerView.NO_POSITION;
+    private final int selectedItem3 = RecyclerView.NO_POSITION;
 
     private SI_Adapter selectedAdapter;
 
@@ -57,7 +57,7 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
         //setContentView(R.layout.activity_escolha_veiculos);
         setContentView(R.layout.activity_escolha_veiculos_new);
 
-        darkMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES ? true : false;
+        darkMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 
         //Simples
 

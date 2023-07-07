@@ -8,8 +8,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.aplicacaonave.R;
+import com.example.aplicacaonave.databinding.ActivityMainBinding;
 
 import domain.Cliente;
 
@@ -21,11 +23,9 @@ public class CadastroCliente extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         getSupportActionBar().setTitle("Cadastro Cliente");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_cliente);
-
     }
 
     public boolean capturaInformacoesCliente(View view) {

@@ -6,4 +6,11 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_darkmode"
+        android:checkable="true"
+        android:orderInCategory="101"
+        android:title="Dark Mode"
+        />
 </menu>

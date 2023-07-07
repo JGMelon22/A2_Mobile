@@ -154,6 +154,7 @@ public class SI_Adapter extends RecyclerView.Adapter<SI_Adapter.MyViewHolder> {
                 }
             });
 
+
         }
 
     }

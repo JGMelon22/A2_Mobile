@@ -41,7 +41,8 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
     private final ArrayList<Carro> carrosPremium = new ArrayList<>();
     private SI_Adapter adapter1, adapter2, adapter3;
     private final RecyclerView[] recyclerViews = new RecyclerView[3]; //
-    private int adapterIndex, selectedPosition;
+    private int adapterIndex;
+    private int selectedPosition = -1;
     private final int selectedItem1 = RecyclerView.NO_POSITION;
     private final int selectedItem2 = RecyclerView.NO_POSITION;
     private final int selectedItem3 = RecyclerView.NO_POSITION;
@@ -124,8 +125,6 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
 
         Carro carro = null;
 
-        selectedPosition = selectedAdapter.getSelectedItemPosition();
-
         if (selectedAdapter == adapter1) {
             switch (selectedPosition) {
                 //Simples
@@ -187,13 +186,24 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
     }
 
     public void buttonAvancarPagamentoOnClick(View view) {
-        capturaInformacoesCarro(view);
+
+        if (selectedAdapter != null) {
+            selectedPosition = selectedAdapter.getSelectedItemPosition();
+            if (selectedPosition != RecyclerView.NO_POSITION) {
+                capturaInformacoesCarro(view);
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Selecione um carro para continuar.", Toast.LENGTH_SHORT).show();
+            }
+        } else { Toast.makeText(getApplicationContext(), "Selecione um carro para continuar.", Toast.LENGTH_SHORT).show(); }
+
     }
 
     @Override
     public void onItemClick(int position, int index) {
         selectedPosition = position;
         adapterIndex = index;
+        SI_Adapter oldAdapter = selectedAdapter;
 
         // Acha o adapter certo atravez do Index
 
@@ -227,7 +237,7 @@ public class EscolhaVeiculos extends AppCompatActivity implements AdapterCallbac
                 adapter3.setSelectedItemPosition(RecyclerView.NO_POSITION);
             }
 
-        } else { Toast.makeText(getApplicationContext(), "Carro indisponível", Toast.LENGTH_SHORT).show(); }
+        } else { selectedAdapter = oldAdapter; Toast.makeText(getApplicationContext(), "Carro indisponível", Toast.LENGTH_SHORT).show(); }
 
     }
 

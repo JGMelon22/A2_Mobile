@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="Contato Fragment"
-        android:textColor="@color/white"
+        android:textColor="?android:attr/colorForeground"
         android:textSize="20sp" />
 
 </FrameLayout>

@@ -40,7 +40,7 @@ public class CadastroCliente extends AppCompatActivity {
 
         // Radio Buttons para o Sexo
         radioButtonMasculino = findViewById(R.id.radioButtonM);
-        radioButtonFeminino = findViewById(R.id.radioButtonF); //TODO: Fusion?
+        radioButtonFeminino = findViewById(R.id.radioButtonF);
 
         // Julga os campos
         if (TextUtils.isEmpty(editTextNomeCliente.getText())) {

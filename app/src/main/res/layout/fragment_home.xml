@@ -16,7 +16,7 @@
         android:alpha="0.4"
         android:fontFamily="@font/faster_one"
         android:textAlignment="center"
-        android:textColor="?android:attr/panelColorForeground"
+        android:textColor="?android:attr/colorForeground"
         android:textSize="45sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
